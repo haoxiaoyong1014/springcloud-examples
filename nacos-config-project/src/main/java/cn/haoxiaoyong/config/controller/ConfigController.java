@@ -20,6 +20,6 @@ public class ConfigController {
 
     @RequestMapping("/username")
     public String get() {
-        return username;
+        return username ;
     }
 }
