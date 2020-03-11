@@ -1,4 +1,4 @@
-package cn.haoxiaoyong.config.consumer.client;
+package cn.haoxiaoyong.discovery.consumer.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

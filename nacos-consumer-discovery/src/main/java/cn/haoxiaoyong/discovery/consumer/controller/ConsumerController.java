@@ -1,6 +1,6 @@
-package cn.haoxiaoyong.config.consumer.controller;
+package cn.haoxiaoyong.discovery.consumer.controller;
 
-import cn.haoxiaoyong.config.consumer.client.ProviderClient;
+import cn.haoxiaoyong.discovery.consumer.client.ProviderClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

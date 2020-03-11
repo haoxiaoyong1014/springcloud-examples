@@ -1,4 +1,4 @@
-package cn.haoxiaoyong.config.consumer;
+package cn.haoxiaoyong.discovery.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

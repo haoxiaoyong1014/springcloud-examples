@@ -1,4 +1,4 @@
-package cn.haoxiaoyong.config.provider.controller;
+package cn.haoxiaoyong.discovery.provider.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

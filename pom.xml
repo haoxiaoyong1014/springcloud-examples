@@ -13,12 +13,14 @@
 
     <groupId>cn.haoxiaoyong.cloud.examples</groupId>
     <artifactId>springcloud-examples</artifactId>
+    <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
 
 
     <modules>
         <module>nacos-consumer-discovery</module>
         <module>nacos-provider-discovery</module>
+        <module>nacos-config-project</module>
     </modules>
 
 </project>
