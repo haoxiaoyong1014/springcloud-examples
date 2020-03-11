@@ -72,7 +72,7 @@ spring.cloud.nacos.config.prefix=nacos-config
 spring.profiles.active=dev
 ```
 
-在上面的配置中，配置了nacos config server的地址，配置的扩展名是properties（目前仅支持ymal和properties）。注意是没有配置server.port的，sever.port的属性在nacos中配置。上面的配置是和Nacos中的dataId 的格式是对应的，nacos的完整格式如下:
+在上面的配置中，配置了nacos config server的地址，配置的扩展名是properties（目前仅支持yaml和properties）。注意是没有配置server.port的，sever.port的属性在nacos中配置。上面的配置是和Nacos中的dataId 的格式是对应的，nacos的完整格式如下:
 
 `${prefix}-${spring.profile.active}.${file-extension}`
 
