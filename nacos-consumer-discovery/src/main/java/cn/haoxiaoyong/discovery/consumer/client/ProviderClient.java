@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient("nacos-provider")
 public interface ProviderClient {
 
+    /**
+     * @param name
+     * @return
+     */
     @GetMapping("/hi")
-    String hi(@RequestParam(value = "name", defaultValue = "forezp", required = false) String name);
+    String hi(@RequestParam(value = "name", defaultValue = "haoxy", required = false) String name);
 }
