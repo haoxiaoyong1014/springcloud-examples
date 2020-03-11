@@ -151,7 +151,7 @@ public class ConsumerController {
 
 ![image.png](https://upload-images.jianshu.io/upload_images/15181329-d155805224974982.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-这时服务提供者nacos-provider-discovery是有2个实例一个是8764,8762;我们访问http://localhost:8763/hi-feign时,各自都有50%的概率;
+这时服务提供者nacos-provider-discovery是有2个实例一个是8764,8762;我们访问`http://localhost:8763/hi-feign`时,各自都有50%的概率;
 这时我们可以将8764端口上的下线;
 
 #### Nacos设置权重
