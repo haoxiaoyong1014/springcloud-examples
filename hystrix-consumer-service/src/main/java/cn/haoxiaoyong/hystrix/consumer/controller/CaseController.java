@@ -22,5 +22,4 @@ public class CaseController{
     public String sayHi(@RequestParam String name) {
         return caseServiceClient.sayFromClient( name );
     }
-
 }
