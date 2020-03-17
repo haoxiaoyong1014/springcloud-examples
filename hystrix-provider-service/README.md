@@ -91,6 +91,8 @@
  
 不可用服务的调用快速失败一般通过 超时机制, 熔断器 和熔断后的 降级方法 来实现.
 
+熔断是一种行为机制,是一个比较大的概念而降级是动作或者说是措施;
+
 #### 使用Hystrix预防雪崩
 
 1.断路器机制
@@ -117,16 +119,16 @@ fallback方法的返回值一般是设置的默认值或者来自缓存.
 在一个高度服务化的系统中,我们实现的一个业务逻辑通常会依赖多个服务,比如:
 商品详情展示服务会依赖商品服务, 价格服务, 商品评论服务. 如图所示:
 
-![segmentfault.com/a/1190000005988895](https://segmentfault.com/img/bVzh9U)
+![segmentfault.com/a/1190000005988895](https://upload-images.jianshu.io/upload_images/15181329-554b8a22a456025d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 调用三个依赖服务会共享商品详情服务的线程池. 如果其中的商品评论服务不可用, 就会出现线程池里所有线程都因等待响应而被阻塞, 从而造成服务雪崩. 如图所示:
 
-![](https://segmentfault.com/img/bVzh9S)
+![](https://upload-images.jianshu.io/upload_images/15181329-a0bc49f888435690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 Hystrix通过将每个依赖服务分配独立的线程池进行资源隔离, 从而避免服务雪崩.
 如下图所示, 当商品评论服务不可用时, 即使商品服务独立分配的20个线程全部处于同步等待状态,也不会影响其他依赖服务的调用.
 
-![](https://segmentfault.com/img/bVziah)
+![](https://upload-images.jianshu.io/upload_images/15181329-fd066b2bd08b0576.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 **创建 hystrix-consumer-service**
 
