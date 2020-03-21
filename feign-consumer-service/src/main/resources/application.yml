@@ -1,0 +1,26 @@
+server:
+  port: 9876
+spring:
+  application:
+    name: openFeign-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+feign:
+  #开启熔断
+  hystrix:
+    enabled: true
+    #开启压缩
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+  #开启okhttp
+  okhttp:
+    enabled: true
+### Feign Logger Level 配置
+logging:
+  level:
+    cn.haoxiaoyong.openfeign.consumer.*.* : debug

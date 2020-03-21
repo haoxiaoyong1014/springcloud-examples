@@ -15,10 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProviderController {
 
     @Value("${server.port}")
-    String port;
+    Long port;
 
     @RequestMapping("/say")
-    public String home(@RequestParam(value = "name", defaultValue = "haoxy") String name) {
+    public String home(@RequestParam(value = "name") String name) {
+
         return "hi " + name + " ,i am from port:" + port;
     }
 }

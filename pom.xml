@@ -25,8 +25,15 @@
         <module>nacos-config-project</module>
         <module>hystrix-consumer-service</module>
         <module>hystrix-provider-service</module>
+        <module>feign-consumer-service</module>
     </modules>
 
+    <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+            </dependency>
+    </dependencies>
     <dependencyManagement>
         <dependencies>
             <dependency>
