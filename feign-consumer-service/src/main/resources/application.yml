@@ -25,10 +25,22 @@ feign:
   client:
     config:
       default:
-        connectTimeout: 5000
+        connectTimeout: 4000
         readTimeout: 5000
         loggerLevel: full
 ### Feign Logger Level 配置
 logging:
   level:
     cn.haoxiaoyong.openfeign.consumer.*.*: debug
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 12000
+ribbon:
+  okhttp:
+    enabled: true
+  ConnectTimeout: 3000
+  ReadTimeout: 3000

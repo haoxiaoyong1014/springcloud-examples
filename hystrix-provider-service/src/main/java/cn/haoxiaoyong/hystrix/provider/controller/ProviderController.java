@@ -19,7 +19,12 @@ public class ProviderController {
 
     @RequestMapping("/say")
     public String home(@RequestParam(value = "name") String name) {
-
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("hi " + name + " ,i am from port:" + port);
         return "hi " + name + " ,i am from port:" + port;
     }
 }
