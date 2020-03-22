@@ -23,8 +23,4 @@ public class OpenFeignApplication {
         SpringApplication.run(OpenFeignApplication.class, args);
     }
 
-    @Bean
-    public Logger.Level feignLoggerLevel() {
-        return Logger.Level.FULL;
-    }
 }

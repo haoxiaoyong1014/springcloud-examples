@@ -20,7 +20,13 @@ feign:
   #开启okhttp
   okhttp:
     enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
 ### Feign Logger Level 配置
 logging:
   level:
-    cn.haoxiaoyong.openfeign.consumer.*.* : debug
+    cn.haoxiaoyong.openfeign.consumer.*.*: debug
