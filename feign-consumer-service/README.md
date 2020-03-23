@@ -2,6 +2,8 @@
 
 #### 使用okhttp替换Feign默认Client
 
+此次的服务提供者还是使用 [hystrix-provider-service](https://github.com/haoxiaoyong1014/springcloud-examples/tree/master/hystrix-provider-service)
+
 Feign 在默认情况下使用的是 JDK 原生的 URLConnection 发送HTTP请求，没有连接池，但是对每个地址会保持一个长连接，即利用 HTTP 的 persistence connection。我们可以用 OKHttp 去替换 Feign 默认的 Client。
 ```xml
 <dependency>
@@ -58,10 +60,10 @@ public class FeignClientOkHttpConfiguration {
 
 #### 超时问题
 
-Feign中集成了Hystrix和Ribbon,当我们配置了`feign.client.config.default.connectTimeout=5000`和`feign.client.config.default.readTimeout=5000`时,我们在提供方
+Feign中集成了Hystrix和Ribbon,当我们配置了`feign.client.config.default.connectTimeout=4000`和`feign.client.config.default.readTimeout=5000`时,我们在提供方
 休眠4s,这时请求 http://localhost:9876/store?name=haoxy 这时发现走了降级策略,并返回错误信息
 `com.netflix.hystrix.exception.HystrixTimeoutException`;出现这个错误也是意料之中的事情，因为Hystrix的默认超时时间是1s!,所以会直接走到降级策略！
-当我们配置了`hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds=10000`时,继续访问,发现这次正常打印结果！
+当我们配置了`hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds=12000`时,继续访问,发现这次正常打印结果！
 
 Ribbon的超时时间配置与Hystrix的超时时间配置则存在依赖关系，因为涉及到Ribbon的重试机制，所以一般情况下都是Ribbon的超时时间小于Hystrix的超时时间,
 
